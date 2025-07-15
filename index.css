@@ -47,16 +47,37 @@ hr{
         padding: 50px;
         padding-top: 30px;
 }
-#gen-btn{
-    background: #10B981;
-    color: #D5D4D8;
+#gen-btn {
+    background-color: #10B981; 
+    color: #ffffff; 
     border: none;
-    width: 182px;
+    width: 190px;
     border-radius: 5px;
     padding: 10px 20px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
 
+    text-align: center;
+    text-decoration: none;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+#gen-btn:hover {
+    background-color: #0e9e6e; 
+}
+
+#gen-btn:focus {
+    outline: 3px solid #273549; /* Yellow outline for focus */
+    outline-offset: 2px;
+}
+
+#gen-btn:active {
+    background-color: #0c865f;
+}
+
 .pc{
     width: 180px;
     height: 30px;
