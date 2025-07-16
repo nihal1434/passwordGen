@@ -1,4 +1,4 @@
-body {
+ body {
     margin: 0;
     background: #1C1C1C;
     display: flex;
@@ -17,14 +17,13 @@ h1{
     font-style: ExtraBold;
     font-size: 35px;
     letter-spacing: -2.5%;
-
 }
 span{
 color: #10B981; 
 margin-bottom: 2px;
 }
 p{ margin-top: 0px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
     padding-top: 0px;
     width: 372px;
     font-size: 18px;
@@ -33,21 +32,21 @@ p{ margin-top: 0px;
     text-shadow: 0px 0px 1px black;
 }
 hr{
-    border: 1px solid #2F3E53;
+    width: 399px;
+    border: 1px solid #69737f;
     
 }
 .container{
-        /* background: #1F2937;background: #374151;background: #0369A1;
-
- */
         background: linear-gradient( 137deg,#111827,#1F2937,#374151);
         width: 400px;
-        height: 400px;
+        height: 450px;
         border-radius: 5px;
         padding: 50px;
         padding-top: 30px;
+        display: flex;
+        flex-direction: column;
 }
-#gen-btn {
+#gen-btn,#reset {
     background-color: #10B981; 
     color: #171717; 
     border: none;
@@ -58,28 +57,56 @@ hr{
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-
     text-align: center;
     text-decoration: none;
-
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+#reset{
+    margin-left:16px ;
+}
+#ipt{
+    background-color: #10B981; 
+    border: none;
+    width: 150px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+::placeholder{
+    color: #403939;
+}
+#ipt:hover {
+    background-color: #0e9e6e; 
+}
+#ipt:focus {
+    outline: 3px solid #273549; 
+    outline-offset: 2px;
+}
 #gen-btn:hover {
     background-color: #0e9e6e; 
 }
 
 #gen-btn:focus {
-    outline: 3px solid #273549; /* Yellow outline for focus */
+    outline: 3px solid #273549; 
     outline-offset: 2px;
 }
-
+#reset:hover {
+    background-color: #0e9e6e; 
+}
+#reset:focus {
+    outline: 3px solid #273549;
+    outline-offset: 2px;
+}
 #gen-btn:active {
     background-color: #0c865f;
 }
 
 .pc{
-    width: 180px;
     height: 30px;
     margin: 8px;
     margin-top: 20px;
@@ -90,5 +117,5 @@ hr{
     text-align: center;
 }
 .out{
-    display: flex;
+    /* display: flex; */
 }

@@ -2,19 +2,35 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O",
 "/"];
 let pdata1=document.getElementById("op1")
 let pdata2=document.getElementById("op2")
+let inPt=document.getElementById("ipt")
+
+let reSet=document.getElementById("reset");
+reSet.addEventListener("click",function(){
+    pdata1.textContent="password 1";
+    pdata2.textContent="password 2";
+    inPt.value=" ";
+})
+
 
 function randomIndex(){
     return Math.floor(Math.random()*characters.length)
 }
+console.log(n);
 
 function genpass(){
     pdata1.textContent=" ";
     pdata2.textContent=" ";
-    for(let i=0;i<15;i++){
+    let n = Number(inPt.value);
+    if(isNaN(n)||n<=0){
+        alert("Please Enter a valid positive integer.");
+        return;
+    }
+
+    for(let i=0;i<n;i++){
         pdata1.textContent+=characters[ randomIndex()];
     }
-    for(let i=0;i<15;i++){
+    for(let i=0;i<n;i++){
         pdata2.textContent+=characters[ randomIndex()];
     }
-    
+    inPt.value="";
 }
