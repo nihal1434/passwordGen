@@ -58,7 +58,6 @@ passwordGen/
 - Input: `12`  
 - Output:  
 T$w9!zeL7@pR
-
 V2d^gB!uQ%m3
 
 Happy Coding!
