@@ -1,18 +1,19 @@
 # 🔐 Password Generator
 
-A simple and responsive **Random Password Generator** built with **HTML, CSS, and JavaScript**.  
-This tool allows users to quickly generate strong, secure passwords of customizable length, and copy them with a single click.
+A sleek and responsive **Random Password Generator** built with **HTML, CSS, and JavaScript**.  
+This tool helps users create strong, secure passwords of customizable length, copy them instantly, and even retains the last generated passwords after a page refresh.
 
 ---
 
 ## ✨ Features
 
-- 🎨 **Clean UI** with modern gradient background and glassmorphism effect.  
+- 🎨 **Modern UI** → gradient background with glassmorphism effect.  
 - ⚡ **Generates two random passwords** instantly.  
-- 🔢 **Custom length input** (up to 35 characters).  
-- 📋 **Click to copy** password directly to clipboard.  
-- ♻️ **Reset option** to clear input and outputs.  
-- 📱 **Responsive design** (works on desktop and mobile).
+- 🔢 **Custom length input** (1–35 characters).  
+- 📋 **Click to copy** any generated password to clipboard.  
+- 💾 **Persistence** → last generated passwords are saved using `localStorage` and restored after refresh.  
+- ♻️ **Reset button** → clears input, output, and storage.  
+- 📱 **Responsive design** → works seamlessly on both desktop and mobile.  
 
 ---
 
@@ -25,12 +26,14 @@ This tool allows users to quickly generate strong, secure passwords of customiza
 ## 🛠️ Tech Stack
 
 - **HTML5** – structure  
-- **CSS3** – styling (flexbox, gradients, backdrop blur)  
-- **JavaScript (ES6)** – password generation logic & clipboard API  
+- **CSS3** – styling (Flexbox, gradients, glassmorphism)  
+- **JavaScript (ES6)** – password generation, persistence & clipboard API  
 
---- 
+---
 
 ## 📂 Project Structure
+
+
 passwordGen/
 │── index.html # Main HTML page
 │── index.css # Styles
