@@ -80,7 +80,7 @@ input[type="checkbox"] {
     border: 1px solid #ffffff4d;
     max-width: 500px;
     padding: 1em;
-    min-height: 100dvh;
+    min-height: 100%;
     width: 100%;
     margin: 0;
 }
