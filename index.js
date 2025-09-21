@@ -1,8 +1,8 @@
 const characters = [
-  "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
-  "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-  "0","1","2","3","4","5","6","7","8","9",
-  "~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"
+  "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+  "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+  "~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ",", "|", ":", ";", "<", ">", ".", "?", "/"
 ];
 
 let pass = [];
@@ -18,11 +18,19 @@ reSet.addEventListener("click", function () {
   pdata1.textContent = "Password 1";
   pdata2.textContent = "Password 2";
   inPt.value = "";
-  localStorage.removeItem("pass"); // clear storage as well
+  localStorage.removeItem("pass");
 });
 
-function randomIndex() {
-  return Math.floor(Math.random() * characters.length);
+let alphabetCb = document.getElementById("Alphabet");
+let numberCb = document.getElementById("Number");
+let symbolsCb = document.getElementById("Symbols");
+
+const letters = characters.slice(0, 52);
+const numbers = characters.slice(52, 62);
+const symbols = characters.slice(62);
+
+function randomIndex(arr) {
+  return Math.floor(Math.random() * arr.length);
 }
 
 function genpass() {
@@ -32,18 +40,25 @@ function genpass() {
     return;
   }
 
+  let pool = [];
+  if (alphabetCb.checked) pool = pool.concat(letters);
+  if (numberCb.checked) pool = pool.concat(numbers);
+  if (symbolsCb.checked) pool = pool.concat(symbols);
+
+  if (pool.length === 0) {
+    alert("Please select at least one character type.");
+    return;
+  }
+
   let pass1 = "";
   let pass2 = "";
 
   for (let i = 0; i < n; i++) {
-    pass1 += characters[randomIndex()];
-  }
-  for (let i = 0; i < n; i++) {
-    pass2 += characters[randomIndex()];
+    pass1 += pool[randomIndex(pool)];
+    pass2 += pool[randomIndex(pool)];
   }
 
   pass = [pass1, pass2];
-
   localStorage.setItem("pass", JSON.stringify(pass));
 
   pdata1.textContent = pass1;
@@ -52,7 +67,6 @@ function genpass() {
   inPt.value = "";
 }
 
-// Load saved passwords on page refresh
 window.addEventListener("DOMContentLoaded", () => {
   const saved = JSON.parse(localStorage.getItem("pass"));
   if (saved && saved.length === 2) {

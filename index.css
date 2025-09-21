@@ -1,121 +1,186 @@
- body {
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     padding: 0;
-    background: linear-gradient( 137deg,#111827,#1F2937,#374151);
-    font-family: "Karla", sans-serif; 
+    background: linear-gradient(137deg, #111827, #1F2937, #374151);
+    font-family: "Karla", sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     height: 100vh;
 }
 
-h1{
+h1 {
+    padding-top: 2rem;
     color: #ffffff;
-    margin-bottom: 2px;  
     font-weight: 800;
     font-size: 2.25rem;
+    margin: 0;
+    margin-bottom: 0.06em;
 }
 
-span{
-    color: #10B981; 
+span {
+    color: #10B981;
     display: inline-block;
+    font-size: 2.5rem;
 }
 
-p{
-    margin-top: 0px;
-    margin-bottom: 75px;
+p {
+    margin: 0;
     font-size: 1.25rem;
-    font-weight: 300;
+    font-weight: 400;
     color: #D5D4D8;
     text-shadow: 0px 0px 1px black;
 }
-hr{
+
+hr {
     width: 100%;
     border: 1px solid #69737f;
-    
+
 }
-.container{
-        background: #ffffff1a; 
-        backdrop-filter: blur(50px);
-        border-radius: 5px;
-        border: 1px solid #ffffff4d;
-        padding: 50px;
-        max-width: 500px;       
-        padding: 2rem 2.5rem;     
-        box-sizing: border-box;
-        max-height: 800px;
+
+.input-type {
+    margin: 2em 0em 1.2em 0;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    padding: .65rem;
+    gap: .5rem;
+    color: #ffffff;
 }
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #10B981;
+    padding: 0;
+    margin: 0;
+}
+
+input[type="checkbox"] {
+    accent-color: #10B981;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+}
+
+.container {
+    background: #ffffff1a;
+    backdrop-filter: blur(50px);
+    border-radius: 5px;
+    border: 1px solid #ffffff4d;
+    max-width: 500px;
+    padding: 1em;
+    min-height: 100dvh;
+    width: 100%;
+    margin: 0;
+}
+
 .btn-gp {
     width: 100%;
     display: flex;
     gap: 1rem;
 }
 
-#gen-btn,#reset {
-    background-color: #10B981; 
-    color: #171717; 
+#gen-btn,
+#reset,
+#ipt {
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
+    padding: .625em 1.25em;
+    margin-bottom: 1.25em;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
+
 }
 
-#ipt{
-    background-color: #10B981; 
-    border: none;
-    width: 150px;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
+#ipt {
+    background-color: #ffffff;
+    width: 48%;
+    min-width: 166px;
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-::placeholder{
-    color: #403939;
 }
 
-#gen-btn:hover,#reset:hover,#ipt:hover {
-    background-color: #0e9e6e; 
-}
-
-#gen-btn:focus ,#reset:focus,
-#ipt:focus {
-    outline: 3px solid #ffffff1a; 
-    outline-offset: 2px;
-}
-
-.pc{
-    height: 30px;
-    margin: 8px;
-    margin-top: 20px;
-    padding-top: 6px;
-    background: #273549;
-    border-radius: 5px;
-    color: #55F991;
-    text-align: center;
-    word-break: break-all;
-}
-.controls {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-.input-gp {
-    width: 100%;
+#ipt:active {
+    background-color: #afaeb1;
 }
 
 #gen-btn,
 #reset {
+    background-color: #10B981;
+    color: #171717;
     flex: 1;
-    min-width: 130px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+::placeholder {
+    color: #403939;
+}
+
+#gen-btn:hover,
+#reset:hover {
+    background-color: #0e9e6e;
+}
+
+#gen-btn:focus,
+#reset:focus,
+#ipt:focus {
+    outline: 3px solid #ffffff1a;
+    outline-offset: 2px;
+}
+
+.pc {
+    margin-top: .8em;
+    background: #273549;
+    border-radius: 5px;
+    color: #55F991;
+    text-align: center;
+    padding: .35em;
+    word-break: break-all;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5em;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (min-width: 525px) {
+    h1 {
+        padding: 0;
+        font-size: 2.5rem;
+    }
+
+    span {
+        font-size: 2.8rem;
+    }
+
+    .container {
+        min-height: 0;
+        padding: 2rem 2.5rem;
+        box-sizing: border-box;
+        max-height: 800px;
+    }
+
+    legend {
+        font-size: 1.25rem;
+    }
+
+
 }

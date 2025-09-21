@@ -9,10 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>Password Generator</title>
 </head>
 
@@ -20,14 +20,21 @@
     <main class="container">
         <h1>Generate a <span>Random Password</span></h1>
         <p>Never use an insecure password again.</p>
+        <fieldset class="input-type">
+            <legend>Include characters:</legend>
+            <label><input type="checkbox" id="Alphabet" name="Alphabet" />Alphabet</label>
+            <label><input type="checkbox" id="Number" name="Number" /> Number</label>
+            <label><input type="checkbox" id="Symbols" name="Symbols" /> Symbols</label>
+        </fieldset>
+
         <section class="controls">
-        <div class="input-gp">
-        <input id="ipt" placeholder="Enter the size..." />
-        </div>
-        <div class="btn-gp">
-        <button id="gen-btn">Generate Password</button>
-        <button id="reset">RESET</button>
-        </div>
+            <div class="input-gp">
+                <input id="ipt" placeholder="Enter the size..." />
+            </div>
+            <div class="btn-gp">
+                <button id="gen-btn">Generate Password</button>
+                <button id="reset">RESET</button>
+            </div>
         </section>
         <hr />
         <section class="out">
