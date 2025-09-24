@@ -61,16 +61,16 @@ function genpass() {
   pass = [pass1, pass2];
   localStorage.setItem("pass", JSON.stringify(pass));
 
-  pdata1.textContent = pass1;
-  pdata2.textContent = pass2;
-
+   pdata1.innerHTML = `${pass1} <i class="fa-regular fa-copy copy"></i>`;
+   pdata2.innerHTML = `${pass2} <i class="fa-regular fa-copy copy"></i>`;
+   
   inPt.value = "";
 }
 
 window.addEventListener("DOMContentLoaded", () => {
   const saved = JSON.parse(localStorage.getItem("pass"));
   if (saved && saved.length === 2) {
-    pdata1.textContent = saved[0];
-    pdata2.textContent = saved[1];
+    pdata1.innerHTML = `${saved[0]} <i class="fa-regular fa-copy copy"></i>`;
+    pdata2.innerHTML = `${saved[1]} <i class="fa-regular fa-copy copy"></i>`;
   }
 });

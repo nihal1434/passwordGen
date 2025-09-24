@@ -45,7 +45,7 @@ hr {
 }
 
 .input-type {
-    margin: 2em 0em 1.2em 0;
+    margin: 1.75em 0em 1.2em 0;
     font-size: 1.1rem;
     display: flex;
     flex-direction: column;
@@ -68,8 +68,6 @@ legend {
 
 input[type="checkbox"] {
     accent-color: #10B981;
-    width: 1em;
-    height: 1em;
     cursor: pointer;
 }
 
@@ -89,6 +87,16 @@ input[type="checkbox"] {
     width: 100%;
     display: flex;
     gap: 1rem;
+}
+
+button {
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+button:active{
+    background: #5a52d6;
+    transform: scale(0.98);    
 }
 
 #gen-btn,
@@ -127,7 +135,6 @@ input[type="checkbox"] {
     align-items: center;
 }
 
-
 ::placeholder {
     color: #403939;
 }
@@ -137,11 +144,8 @@ input[type="checkbox"] {
     background-color: #0e9e6e;
 }
 
-#gen-btn:focus,
-#reset:focus,
 #ipt:focus {
-    outline: 3px solid #ffffff1a;
-    outline-offset: 2px;
+    outline: none;
 }
 
 .pc {
@@ -152,8 +156,18 @@ input[type="checkbox"] {
     text-align: center;
     padding: .35em;
     word-break: break-all;
+    display: flex;
+    justify-content:center ;
+    gap: 2rem;
 }
-
+.copy {
+    color: #9CA3AF; 
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.copy:active{
+color: #D1D5DB;
+}
 .controls {
     display: flex;
     gap: 0.5em;
