@@ -25,7 +25,7 @@ h1 {
 }
 
 span {
-    color: #10B981;
+    color: #05e648;
     display: inline-block;
     font-size: 2.5rem;
 }
@@ -34,7 +34,7 @@ p {
     margin: 0;
     font-size: 1.25rem;
     font-weight: 400;
-    color: #D5D4D8;
+    color: #e8e4f4;
     text-shadow: 0px 0px 1px black;
 }
 
@@ -45,11 +45,11 @@ hr {
 }
 
 .input-type {
-    margin: 1.75em 0em 1em 0;
+    margin: 1.5em 0em 1em 0;
     font-size: 1.1rem;
     display: flex;
     flex-direction: column;
-    padding: .65rem;
+    padding: .65rem 0 .65rem 0;
     gap: .5rem;
     color: #ffffff;
 }
@@ -59,15 +59,15 @@ fieldset {
 }
 
 legend {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    color: #10B981;
+    color: #05e648;
     padding: 0;
     margin: 0;
 }
 
 input[type="checkbox"] {
-    accent-color: #10B981;
+    accent-color: #05e648;
     cursor: pointer;
 }
 
@@ -114,7 +114,7 @@ button:active{
 }
 
 #ipt {
-    padding: .625em 1em;
+    padding: .625em 1.5em;
     background-color: #ffffff;
     width: 48%;
     min-width: 145px;
@@ -127,8 +127,8 @@ button:active{
 
 #gen-btn,
 #reset {
-    background-color: #10B981;
-    color: #171717;
+    background-color: #05e648;
+    color: #1c1b1bf4;
     flex: 1;
     width: 50%;
     display: flex;
@@ -140,11 +140,6 @@ button:active{
     color: #403939;
 }
 
-#gen-btn:hover,
-#reset:hover {
-    background-color: #0e9e6e;
-}
-
 #ipt:focus {
     outline: none;
 }
@@ -153,7 +148,7 @@ button:active{
     margin-top: .8em;
     background: #273549;
     border-radius: 5px;
-    color: #55F991;
+    color: #05e648;
     text-align: center;
     padding: .35em;
     word-break: break-all;
@@ -188,15 +183,11 @@ color: #D1D5DB;
 
     .container {
         min-height: 0;
-        padding: 2rem 2.5rem;
+        padding: 1.5rem 2rem 2rem 2rem ;
         box-sizing: border-box;
         max-height: 800px;
         border: 1px solid #ffffff4d;
 
-    }
-
-    legend {
-        font-size: 1.25rem;
     }
 
 
