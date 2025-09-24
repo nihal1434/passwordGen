@@ -75,7 +75,6 @@ input[type="checkbox"] {
     background: #ffffff1a;
     backdrop-filter: blur(50px);
     border-radius: 5px;
-    border: 1px solid #ffffff4d;
     max-width: 500px;
     padding: 1em;
     min-height: 100%;
@@ -190,6 +189,8 @@ color: #D1D5DB;
         padding: 2rem 2.5rem;
         box-sizing: border-box;
         max-height: 800px;
+        border: 1px solid #ffffff4d;
+
     }
 
     legend {
