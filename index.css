@@ -104,6 +104,7 @@ button:active{
     border: none;
     border-radius: 5px;
     padding: .625em 1.25em;
+    
     margin-bottom: 1.25em;
     font-size: 1rem;
     font-weight: 600;
@@ -113,9 +114,10 @@ button:active{
 }
 
 #ipt {
+    padding: .625em 1em;
     background-color: #ffffff;
     width: 48%;
-    min-width: 166px;
+    min-width: 145px;
     text-decoration: none;
 }
 
