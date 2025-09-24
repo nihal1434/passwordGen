@@ -66,6 +66,12 @@ function genpass() {
    
   inPt.value = "";
 }
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("copy")) {
+    const text = e.target.parentElement.textContent.trim();
+    navigator.clipboard.writeText(text)
+  }
+});
 
 window.addEventListener("DOMContentLoaded", () => {
   const saved = JSON.parse(localStorage.getItem("pass"));
