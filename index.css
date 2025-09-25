@@ -63,7 +63,6 @@ legend {
     font-weight: 600;
     color: #05e648;
     padding: 0;
-    margin: 0;
 }
 
 input[type="checkbox"] {
@@ -104,7 +103,6 @@ button:active{
     border: none;
     border-radius: 5px;
     padding: .625em 1.25em;
-    
     margin-bottom: 1.25em;
     font-size: 1rem;
     font-weight: 600;
@@ -128,16 +126,12 @@ button:active{
 #gen-btn,
 #reset {
     background-color: #19ce4f;
-    color: #1c1b1bf4;
-    flex: 1;
+    color: #000000;
     width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 ::placeholder {
-    color: #403939;
+    color: #000000;
 }
 
 #ipt:focus {
@@ -151,11 +145,9 @@ button:active{
     color: #05e648;
     text-align: center;
     padding: .35em;
-    word-break: break-all;
-    display: flex;
-    justify-content:center ;
-    gap: 2rem;
+    word-break:break-all;
 }
+
 .copy {
     color: #9CA3AF; 
     cursor: pointer;
@@ -164,21 +156,16 @@ button:active{
 .copy:active{
 color: #D1D5DB;
 }
-.controls {
-    display: flex;
-    gap: 0.5em;
-    flex-direction: column;
-    justify-content: center;
-}
+
 
 @media (min-width: 525px) {
     h1 {
         padding: 0;
-        font-size: 2.5rem;
+        font-size: 2.75rem;
     }
 
     span {
-        font-size: 2.8rem;
+        font-size: 2.9rem;
     }
 
     .container {
@@ -189,6 +176,4 @@ color: #D1D5DB;
         border: 1px solid #ffffff4d;
 
     }
-
-
 }
