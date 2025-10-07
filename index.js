@@ -131,7 +131,6 @@ function resetpass() {
 
   localStorage.removeItem("pass");
   localStorage.removeItem("options");
-  inPt.focus();
 }
 function genpass() {
   const n = Number(inPt.value);
@@ -215,5 +214,10 @@ window.addEventListener("DOMContentLoaded", () => {
     output.innerHTML = inPt.value;
     let x = inPt.value * 4;
     inPt.style.background = `linear-gradient(90deg, #05e648 ${x}%, #ffffff1a ${x}%)`;
+  }else{
+    inPt.value=0;
+    generatePassword();
+    output.innerHTML = inPt.value;
   }
+  
 });
