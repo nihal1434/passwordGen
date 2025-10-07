@@ -94,10 +94,6 @@ const characters = [
 const letters = characters.slice(0, 52);
 const numbers = characters.slice(52, 62);
 const symbols = characters.slice(62);
-
-const genBtn = document.getElementById("gen-btn");
-const reSet = document.getElementById("reset");
-
 const pdata1 = document.getElementById("op1");
 const pdata2 = document.getElementById("op2");
 const inPt = document.getElementById("ipt");
@@ -106,9 +102,6 @@ const output = document.getElementById("value");
 const alphabetCb = document.getElementById("Alphabet");
 const numberCb = document.getElementById("Number");
 const symbolsCb = document.getElementById("Symbols");
-
-genBtn.addEventListener("click", genpass);
-reSet.addEventListener("click", resetpass);
 
 output.innerHTML = inPt.value;
 
@@ -120,7 +113,10 @@ inPt.addEventListener("input", function () {
   let x = inPt.value * 4;
   let color = `linear-gradient(90deg, #05e648 ${x}%, #ffffff1a ${x}%)`;
   inPt.style.background = color;
-  // genpass()
+  genpass()
+  if(x==0){
+    resetpass()
+  }
 });
 
 function resetpass() {
@@ -153,7 +149,7 @@ function genpass() {
 
   if (pool.length === 0) {
     pdata1.textContent = "⚠️ Select at least one type";
-    pdata2.textContent = "";
+    pdata2.textContent = "⚠️ Select at least one type";
     return;
   }
 
@@ -216,8 +212,8 @@ window.addEventListener("DOMContentLoaded", () => {
     symbolsCb.checked = savedOptions.symbols;
     inPt.value = savedOptions.length || 0;
 
-   output.innerHTML = inPt.value;
-   let x = inPt.value * 4;
-   inPt.style.background = `linear-gradient(90deg, #05e648 ${x}%, #ffffff1a ${x}%)`;
+    output.innerHTML = inPt.value;
+    let x = inPt.value * 4;
+    inPt.style.background = `linear-gradient(90deg, #05e648 ${x}%, #ffffff1a ${x}%)`;
   }
 });
