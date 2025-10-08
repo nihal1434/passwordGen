@@ -151,7 +151,7 @@ hr {
     text-shadow: 0px 1px 2px black;
     font-size: 1.05rem;
     margin: 1.25rem 0;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
     background: #ffffff1a;
     border-radius: 5px;
     color: #05e648;
@@ -173,7 +173,7 @@ hr {
     color: #ffffff;
 }
 .out span{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 
