@@ -169,9 +169,9 @@ function genpass() {
   };
   localStorage.setItem("pass", JSON.stringify(pass));
   localStorage.setItem("options", JSON.stringify(options));
+  pdata1.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${pass1}</span> <i class="fa-regular fa-copy copy"></i>`;
+  pdata2.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${pass2}</span> <i class="fa-regular fa-copy copy"></i>`;
 
-  pdata1.innerHTML = `${pass1} <i class="fa-regular fa-copy copy"></i>`;
-  pdata2.innerHTML = `${pass2} <i class="fa-regular fa-copy copy"></i>`;
 }
 
 function randomIndex(arr) {
@@ -198,8 +198,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const savedOptions = JSON.parse(localStorage.getItem("options"));
 
   if (saved && saved.length === 2) {
-    pdata1.innerHTML = `${saved[0]} <i class="fa-regular fa-copy copy"></i>`;
-    pdata2.innerHTML = `${saved[1]} <i class="fa-regular fa-copy copy"></i>`;
+    pdata1.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${saved[0]}</span> <i class="fa-regular fa-copy copy"></i>`;
+    pdata2.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${saved[1]}</span> <i class="fa-regular fa-copy copy"></i>`;
+
   }
   if (savedOptions) {
     alphabetCb.checked = savedOptions.alphabet;
