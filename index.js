@@ -113,9 +113,9 @@ inPt.addEventListener("input", function () {
   let x = inPt.value * 4;
   let color = `linear-gradient(90deg, #05e648 ${x}%, #ffffff1a ${x}%)`;
   inPt.style.background = color;
-  genpass()
-  if(x==0){
-    resetpass()
+  genpass();
+  if (x == 0) {
+    resetpass();
   }
 });
 
@@ -124,7 +124,7 @@ function resetpass() {
   pdata2.textContent = "Password 2";
   inPt.value = 0;
   inPt.style.background = `linear-gradient(90deg, #05e648 ${0}%, #ffffff1a ${0}%)`;
-  // clear checkboxes
+
   alphabetCb.checked = false;
   numberCb.checked = false;
   symbolsCb.checked = false;
@@ -152,17 +152,14 @@ function genpass() {
     return;
   }
 
-  // Generate both passwords
   const pass1 = generatePassword(pool, n);
   const pass2 = generatePassword(pool, n);
 
-  // Always ensure exact length
   if (pass1.length !== n || pass2.length !== n) {
     console.warn("Password length mismatch, regenerating...");
     return genpass(); // retry once safely
   }
 
-  // Save in localStorage
   const pass = [pass1, pass2];
   const options = {
     alphabet: alphabetCb.checked,
@@ -173,7 +170,6 @@ function genpass() {
   localStorage.setItem("pass", JSON.stringify(pass));
   localStorage.setItem("options", JSON.stringify(options));
 
-  // Display
   pdata1.innerHTML = `${pass1} <i class="fa-regular fa-copy copy"></i>`;
   pdata2.innerHTML = `${pass2} <i class="fa-regular fa-copy copy"></i>`;
 }
@@ -214,10 +210,9 @@ window.addEventListener("DOMContentLoaded", () => {
     output.innerHTML = inPt.value;
     let x = inPt.value * 4;
     inPt.style.background = `linear-gradient(90deg, #05e648 ${x}%, #ffffff1a ${x}%)`;
-  }else{
-    inPt.value=0;
+  } else {
+    inPt.value = 0;
     generatePassword();
     output.innerHTML = inPt.value;
   }
-  
 });
