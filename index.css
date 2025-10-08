@@ -159,11 +159,12 @@ hr {
     padding: .25rem;
     line-height: 150%;
     word-break: break-all;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .copy{
-    position: absolute;
-    right: 5%;
-    top: 25%;
     color: #c4c0d5;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -173,7 +174,10 @@ hr {
     color: #ffffff;
 }
 .out span{
-    font-size: 1.1rem;
+    padding-left: 0;
+    margin-left: 0;
+    font-size: 1.05rem;
+
 }
 
 
