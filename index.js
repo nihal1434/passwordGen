@@ -98,11 +98,15 @@ const pdata1 = document.getElementById("op1");
 const pdata2 = document.getElementById("op2");
 const inPt = document.getElementById("ipt");
 const output = document.getElementById("value");
+const currentYear= document.getElementById("current-year");
+
 
 const alphabetCb = document.getElementById("Alphabet");
 const numberCb = document.getElementById("Number");
 const symbolsCb = document.getElementById("Symbols");
 
+const datesnap = new Date()
+currentYear.textContent=`${datesnap.getFullYear()}`
 output.innerHTML = inPt.value;
 
 inPt.oninput = function () {
@@ -134,11 +138,6 @@ function resetpass() {
 }
 function genpass() {
   const n = Number(inPt.value);
-  if (isNaN(n) || n === 0) {
-    pdata1.textContent = "Password 1";
-    pdata2.textContent = "Password 2";
-    return;
-  }
 
   // Create pool from selected options
   let pool = [];
@@ -152,8 +151,8 @@ function genpass() {
     return;
   }
 
-  const pass1 = generatePassword(pool, n);
-  const pass2 = generatePassword(pool, n);
+  const pass1 = generatePassword(pool, n).trim();
+  const pass2 = generatePassword(pool, n).trim();
 
   if (pass1.length !== n || pass2.length !== n) {
     console.warn("Password length mismatch, regenerating...");
@@ -169,8 +168,8 @@ function genpass() {
   };
   localStorage.setItem("pass", JSON.stringify(pass));
   localStorage.setItem("options", JSON.stringify(options));
-  pdata1.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${pass1}</span> <i class="fa-regular fa-copy copy"></i>`;
-  pdata2.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${pass2}</span> <i class="fa-regular fa-copy copy"></i>`;
+  pdata1.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${pass1}</span><i class="fa-regular fa-copy copy"></i>`;
+  pdata2.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${pass2}</span><i class="fa-regular fa-copy copy"></i>`;
 
 }
 
@@ -188,18 +187,19 @@ function generatePassword(pool, length) {
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("copy")) {
-    const text = e.target.parentElement.textContent.trim();
+    const text = e.target.previousElementSibling.textContent.trim();
     navigator.clipboard.writeText(text);
   }
 });
+
 
 window.addEventListener("DOMContentLoaded", () => {
   const saved = JSON.parse(localStorage.getItem("pass"));
   const savedOptions = JSON.parse(localStorage.getItem("options"));
 
   if (saved && saved.length === 2) {
-    pdata1.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${saved[0]}</span> <i class="fa-regular fa-copy copy"></i>`;
-    pdata2.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${saved[1]}</span> <i class="fa-regular fa-copy copy"></i>`;
+    pdata1.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${saved[0]}</span><i class="fa-regular fa-copy copy"></i>`;
+    pdata2.innerHTML = `<span style="font-family: 'Fira Code', monospace;">${saved[1]}</span><i class="fa-regular fa-copy copy"></i>`;
 
   }
   if (savedOptions) {

@@ -181,7 +181,10 @@ hr {
 
 }
 
-
+footer p{
+    font-size: .85em;
+    text-align: center;
+}
 @media (min-width: 525px) {
     .heading {
         margin-bottom: 1.75rem;
