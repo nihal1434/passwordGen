@@ -6,6 +6,7 @@
 
 body {
     margin: 0;
+    height: 100svh;
     padding: 0;
     font-family: "Poppins", sans-serif;
     background-color: #182848;
@@ -100,7 +101,6 @@ hr {
 }
 
 #ipt {
-    -webkit-appearance: none;
     height: 12px;
     accent-color: #05e648;
     cursor: pointer;
@@ -180,10 +180,16 @@ hr {
     font-size: 1.05rem;
 
 }
-
+footer{
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;   
+}
 footer p{
     font-size: .85em;
-    text-align: center;
+    /* text-align: center; */
 }
 @media (min-width: 525px) {
     .heading {
@@ -192,11 +198,16 @@ footer p{
 
     body {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: unset;
         min-height: 100vh;
     }
-
+    footer{
+      position: fixed;
+      bottom: 1%;
+    }
     .container {
         backdrop-filter: blur(50px);
         border-radius: 5px;
