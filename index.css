@@ -13,11 +13,11 @@ body {
 }
 
 .container {
-    padding: 1em;
+    padding: .5em;
 }
 
 .heading {
-    margin-bottom: 3rem;
+    margin-bottom: 2.75rem;
 }
 
 h1 {
@@ -182,7 +182,7 @@ hr {
 }
 footer{
   position: fixed;
-  bottom: 20px;
+  bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;   
